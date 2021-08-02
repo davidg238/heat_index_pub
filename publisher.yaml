@@ -1,0 +1,13 @@
+# filename: publisher.yaml
+
+# Executes app on install, then periodically.
+# See https://docs.toit.io/tutorials/starter/temperature/
+
+name: heat_index
+entrypoint: heat_index.toit
+triggers:
+    on_install: true
+#    on_interval: 15s
+    cron:
+        - "0,15,30,45 * * * *"  
+# https://alvinalexander.com/linux/unix-linux-crontab-every-minute-hour-day-syntax/ , brute force    
